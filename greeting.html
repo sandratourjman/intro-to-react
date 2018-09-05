@@ -11,17 +11,26 @@
 
      <script type="text/babel">
          class Greeting extends React.Component {
+          constructor(props) {
+            super(props);
+            this.state = {
+              lastLogin: 0
+          }
+        }
+
            render() {
              return (
                <div>
                  <h1>Hello World!</h1>
+                 <h3>Welcome back, {this.props.name}</h3>
+                 <h5>Days since last login: {this.state.lastLogin}</h5>
                </div>
              );
            }
          }
 
          ReactDOM.render(
-           <Greeting />, document.getElementById('app')
+           <Greeting name='Sandra' />, document.getElementById('app')
          );
        </script>
   </body>
